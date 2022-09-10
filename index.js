@@ -3,7 +3,9 @@ const express = require('express')
 const mongoose = require('mongoose')
 const PORT = process.env.PORT
 const app = express()
-
+const booksController = require('./controllers/books_controller.js')
+app.use('/books', booksController)
+  
 
 
 
@@ -11,12 +13,6 @@ app.get('/', (req, res) => {
     res.send('Welcome to the BOOKS API!')
   })
 
-app.get('*', (req, res) => {
-    res.send('404')
-  })
-
-const booksController = require('./controllers/books_controller.js')
-app.use('/books', booksController)
 
 app.use(express.json())
 
