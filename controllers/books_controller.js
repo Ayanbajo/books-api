@@ -53,7 +53,7 @@ books.get('/', (req, res) => {
 })
 
 // GET ROUTE BY TITLE
-books.get('/:title', (req, res) => {
+books.get('/:id', (req, res) => {
     Book.findOne()
     .then(foundBooks => {
         res.json(foundBooks)
@@ -75,7 +75,7 @@ books.post('/', (req, res) => {
 })
 
 //UPDATE ROUTE
-books.put('/:title', (req, res) => {
+books.put('/:id', (req, res) => {
     Book.findOneAndUpdate()
     .then(foundBooks => {
         res.json(foundBooks)
@@ -86,7 +86,7 @@ books.put('/:title', (req, res) => {
 })
 
 //DELETE ROUTE
-books.delete('/:title', (req, res) => {
+books.delete('/:id', (req, res) => {
     Books.findOneAndDelete()
     .then(foundBooks => {
         res.json(foundBooks)
