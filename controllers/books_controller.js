@@ -1,5 +1,4 @@
 const express = require('express')
-const Books = require('../models/books.js')
 const books = express.Router()
 const Book = require('../models/books.js')
 
@@ -65,7 +64,7 @@ books.get('/:id', (req, res) => {
 
 // CREATE ROUTE
 books.post('/', (req, res) => {
-    Books.create()
+    Book.create()
     .then(foundBooks => {
         res.json(foundBooks)
     })
